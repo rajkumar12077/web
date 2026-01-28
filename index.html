@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - College Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Auth View -->
+    <div id="auth-view" class="auth-view">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 class="auth-title">EduFlow</h1>
+                <p class="auth-subtitle">College Management System</p>
+            </div>
+            <div class="form-group-container">
+                <div class="form-group">
+                    <label class="form-label">Username / ID</label>
+                    <input type="text" id="login-id" class="form-input" placeholder="e.g. ADM001">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="login-password" class="form-input">
+                </div>
+                <button onclick="handleLogin()" class="btn btn-primary btn-full">Login</button>
+            </div>
+            <div class="auth-footer">
+                Default: Admin (ADM001 / admin123)
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard View (Hidden by default) -->
+    <div id="dashboard-view" class="dashboard-view hidden">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">EduFlow</h2>
+                <p id="user-role-display" class="sidebar-role">Admin Dashboard</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <!-- Nav items generated via JS -->
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="handleLogout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="content-header">
+                <h3 id="page-title" class="page-title">Overview</h3>
+                <div class="header-actions">
+                    <span id="header-user-name" class="user-name"></span>
+                    <button onclick="openChangePassword()" class="btn-link">Change Password</button>
+                </div>
+            </header>
+
+            <div id="content-container" class="content-container">
+                <!-- Dynamic Content Loads Here -->
+            </div>
+        </main>
+    </div>
+
+    
+
+    <!-- Feedback Message -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
