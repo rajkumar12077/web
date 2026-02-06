@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validateForm() {
+                var username = document.getElementById('username').value;
+                var fullname = document.getElementById('fullname').value;
+                var email = document.getElementById('email').value;
+                var phone = document.getElementById('phone').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirmpassword').value;
+                if (!username || !fullname || !email || !phone || !password || !confirmPassword) {
+                    alert('All fields are required');
+                    return false;
+                }
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return false;
+                }
+                var phoneRegex = /^\d{10}$/;
+                if (!phoneRegex.test(phone)) {
+                    alert('Please enter a valid 10-digit phone number');
+                    return false;
+                }
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match');
+                    return false;
+                }
+                alert('Registration successful');
+                return true;
+            }
+        </script>
+        <style>
+            h1{
+                text-align: center;
+            }
+            .reg{
+                display: flex;
+                flex-direction: column;
+                
+                gap: 10px;
+                background-color: rgb(150, 127, 255);
+                width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .field {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .field label {
+                width: 130px;
+                text-align: right;
+            }
+            .field input, .field select {
+                flex: 1;
+            }
+        </style>
+        <title>
+            REGISTRATION PAGE
+        </title>
+    </head>
+    <body>
+        <h1>REGISTRATION PAGE</h1>
+        <form onsubmit="return validateForm()">
+        <div class="reg">
+            <div class="field un" style="padding-top:20px;">
+        <label for="username">USERNAME</label>
+        <input id="username" type="text"/>
+        </div>
+        <div class="field fn">
+        <label for="fullname">FULL NAME</label>
+        <input id="fullname" type="text"/>
+        </div>
+        <div class="field em">
+        <label for="email">EMAIL</label>
+        <input id="email" type="email"/>
+        </div>
+        <div class="field ph">
+        <label for="phone">PHONE NUMBER</label>
+        <input id="phone" type="tel"/>
+        </div>
+        <div class="field pswd">
+        <label for="password">PASSWORD</label>
+        <input id="password" type="password"/>
+        </div>
+        <div class="field cpswd">
+        <label for="confirmpassword">CONFIRM PASSWORD</label>
+        <input id="confirmpassword" type="password"/>
+        </div>
+        <div class="field">
+        <label for="role">ROLE</label>
+        <select name="role" id="role">
+            <option value="buyer">BUYER</option>
+            <option value="seller">SELLER</option>
+            <option value="admin">ADMIN</option>
+        </select>
+        </div>
+        <div style="text-align: center; margin-top: 10px;">
+        <input id="register" style="width:100px" type="submit">
+        </div>
+        </div>
+        </form>
+    </body>
+</html>
