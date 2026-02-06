@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+        </script>
+        <style>
+            h1{
+                text-align: center;
+            }
+            .login{
+                display: flex;
+                flex-direction: column;
+                
+                gap: 10px;
+                padding-left: 200px;
+                background-color: rgb(150, 127, 255);
+                width: 200px;
+                margin: 0 auto;
+            }
+            
+        </style>
+        <title>
+            LOGIN PAGE
+        </title>
+    </head>
+    <body>
+        <h1>LOGIN PAGE</h1>
+        <div class="login">
+            <div class="un" style="padding-top:20px;">
+        <label for="username">USERNAME</label>
+        <input id="username" type="text"/>
+        </div>
+        <div class="pswd">
+        <label for="password">PASSWORD</label>
+        <input id="password" type="password"/>
+        </div>
+        <div>
+        <label for="role">ROLE</label>
+        <select name="role" id="role">
+            <option value="buyer">BUYER</option>
+            <option value="seller">SELLER</option>
+            <option value="admin">ADMIN</option>
+        </select>
+        </div>
+        <input id="submit" style="width:100px" type="submit" onclick="alert('sasaa')">
+        </div>
+    </body>
+</html>
